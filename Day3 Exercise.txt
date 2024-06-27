@@ -1,0 +1,326 @@
+question 1
+import java.util.Scanner;
+
+public class GreatestnumberinArray {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter the elements of the array (separated by spaces):");
+        String input = scanner.nextLine();
+        String[] tokens = input.split(" ");
+        int n = tokens.length;
+        int[] numbers = new int[n];
+       
+        for (int i = 0; i < n; i++) {
+            numbers[i] = Integer.parseInt(tokens[i]);
+        }
+       
+        int greatest = findGreatest(numbers);
+       
+        System.out.print("The numbers are: ");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i]);
+            if (i < numbers.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+        System.out.println("The greatest number is: " + greatest);
+       
+        scanner.close();
+    }
+   
+    public static int findGreatest(int[] arr) {
+        int greatest = arr[0];
+        for (int num : arr) {
+            if (num > greatest) {
+                greatest = num;
+            }
+        }
+        return greatest;
+    }
+}
+
+question 2
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class ArrayInAscendingorder {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+       
+        System.out.println("Enter the elements of the array (separated by spaces):");
+        String input = scanner.nextLine();
+        String[] tokens = input.split(" ");
+        int n = tokens.length;
+        int[] numbers = new int[n];
+       
+        for (int i = 0; i < n; i++) {
+            numbers[i] = Integer.parseInt(tokens[i]);
+
+
+
+        }
+       
+        Arrays.sort(numbers);
+       
+        System.out.print("Sorted array in ascending order: ");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i]);
+            if (i < numbers.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        scanner.close();
+    }
+}
+
+question 3
+book.java
+class Book {
+    private String isbn;
+    private String title;
+    private String author;
+    private double price;
+
+    // Parameterized constructor
+    public Book(String isbn, String title, String author, double price) {
+        this.isbn = isbn;
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
+
+    // Method to display book details
+    public void displayDetails() {
+        System.out.println("ISBN: " + isbn);
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Price: " + price);
+    }
+
+    // Method to calculate discounted price
+    public double discountedPrice(double discountPercent) {
+        double discountAmount = (discountPercent / 100) * price;
+        return price - discountAmount;
+    }
+}
+
+bookstore.java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input book details
+        System.out.print("Enter ISBN: ");
+        String isbn = scanner.nextLine();
+        System.out.print("Enter Title: ");
+        String title = scanner.nextLine();
+        System.out.print("Enter Author: ");
+        String author = scanner.nextLine();
+        System.out.print("Enter Price: ");
+        double price = scanner.nextDouble();
+
+        // Create book object
+        Book book = new Book(isbn, title, author, price);
+
+        // Display book details
+        System.out.println("Book Details:");
+        book.displayDetails();
+
+        // Input discount percent
+        System.out.print("Enter Discount Percent: ");
+        double discountPercent = scanner.nextDouble();
+
+        // Calculate discounted price and display
+        double discountedPrice = book.discountedPrice(discountPercent);
+        System.out.println("Price after " + discountPercent + "% discount: " + discountedPrice);
+
+
+        scanner.close();
+    }
+}
+
+question4
+Employee.java
+public class Employee {
+    private String name;
+    private int age;
+    private double salary;
+
+    // Parameterized constructor
+    public Employee(String name, int age, double salary) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+
+    // Method to display employee details
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Salary: " + salary);
+    }
+
+    // Method to increase salary
+    public void increaseSalary(double percent) {
+        salary += (percent / 100) * salary;
+        System.out.println(name + "'s salary after increase: " + salary);
+    }
+}
+
+Employeedemo.java
+
+import java.util.Scanner;
+
+public class Employeedemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input employee details
+        System.out.print("Enter employee name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter employee age: ");
+        int age = scanner.nextInt();
+        System.out.print("Enter employee salary: ");
+        double salary = scanner.nextDouble();
+
+        // Create employee object
+        Employee employee = new Employee(name, age, salary);
+
+        // Display employee details
+        System.out.println("Employee Details:");
+        employee.displayDetails();
+
+        // Increase employee salary
+        System.out.print("Enter percentage increase in salary: ");
+        double increasePercent = scanner.nextDouble();
+        employee.increaseSalary(increasePercent);
+
+
+        scanner.close();
+    }
+}
+
+Question 5
+Student.java
+
+
+public class Student {
+	    private int studentId;
+	    private String name;
+	    private String contactNo;
+	    private String course;
+	    private double fees;
+
+	    // Constructor to populate the objects
+	    public Student(int studentId, String name, String contactNo, String course, double fees) {
+	        this.studentId = studentId;
+	        this.name = name;
+	        this.contactNo = contactNo;
+	        this.course = course;
+	        this.fees = fees;
+	    }
+
+	    // Method to display student details
+	    public void display() {
+	        System.out.println("Student ID: " + studentId);
+	        System.out.println("Name: " + name);
+	        System.out.println("Contact No: " + contactNo);
+	        System.out.println("Course: " + course);
+	        System.out.println("Fees: " + fees);
+	        System.out.println();
+	    }
+
+	    // Method to return the course fees
+	    public double getFees() {
+	        return fees;
+	    }
+
+	    // Getter for course
+	    public String getCourse() {
+	        return course;
+	    }
+	}
+
+StudentDemo.java
+import java.util.Scanner;
+
+public class StudentDemo {
+	   public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+
+	        // Create array to store 5 students
+	        Student[] students = new Student[5];
+
+	        // Input details for each student
+	        for (int i = 0; i < 5; i++) {
+	            System.out.println("Enter details for Student " + (i+1) + ":");
+	            System.out.print("Student ID: ");
+	            int studentId = scanner.nextInt();
+	            scanner.nextLine(); // Consume newline character
+	            System.out.print("Name: ");
+	            String name = scanner.nextLine();
+	            System.out.print("Contact No: ");
+	            String contactNo = scanner.nextLine();
+	            System.out.print("Course: ");
+	            String course = scanner.nextLine();
+	            System.out.print("Fees: ");
+	            double fees = scanner.nextDouble();
+
+	            // Create student object and add to array
+	            students[i] = new Student(studentId, name, contactNo, course, fees);
+	        }
+
+	        // Display student details coursewise
+	        System.out.println("Student details coursewise:");
+	        String[] uniqueCourses = getUniqueCourses(students);
+	        for (String course : uniqueCourses) {
+	            System.out.println(course + ":");
+	            for (Student student : students) {
+	                if (student.getCourse().equals(course)) {
+	                    student.display();
+	                }
+	            }
+	        }
+
+	        // Display total fees of all students
+	        double totalFees = getTotalFees(students);
+	        System.out.println("Total fees of all students: " + totalFees);
+
+	        scanner.close();
+	    }
+
+	    // Method to get unique courses from students
+	    private static String[] getUniqueCourses(Student[] students) {
+	        String[] uniqueCourses = new String[students.length];
+	        int count = 0;
+	        for (Student student : students) {
+	            boolean isNewCourse = true;
+	            for (String course : uniqueCourses) {
+	                if (course != null && course.equals(student.getCourse())) {
+	                    isNewCourse = false;
+	                    break;
+	                }
+	            }
+	            if (isNewCourse) {
+	                uniqueCourses[count++] = student.getCourse();
+	            }
+	        }
+	        return uniqueCourses;
+	    }
+
+	    // Method to calculate total fees of all students
+	    private static double getTotalFees(Student[] students) {
+	        double totalFees = 0;
+	        for (Student student : students) {
+	            totalFees += student.getFees();
+	        }
+	        return totalFees;
+	    }
+	}
+
+
+
